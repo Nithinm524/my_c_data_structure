@@ -13,3 +13,4 @@ int main()
     int a[CAP],n=130;
     printvalues(a,n);
 }
+
