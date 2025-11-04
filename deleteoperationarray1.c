@@ -6,7 +6,10 @@ int main() {
     int n = 3;  // current number of elements
 
     if (n > 0) {
-        n--; // simply reduce the size to remove last element
+        n--; 
+          printf("Nithin M\n");
+        printf("USN:1SV24CS089\n");
+        // simply reduce the size to remove last element
         printf("Deleted element from end.\n");
     } else {
         printf("Array is empty.\n");
@@ -20,3 +23,4 @@ int main() {
 
     return 0;
 }
+
