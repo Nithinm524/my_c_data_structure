@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 5
+
 int queue[SIZE];
 int front = -1, rear = -1;
+
+// Function to insert an element (enqueue)
 void enqueue(int value) {
     if (rear == SIZE - 1) {
         printf("Queue Overflow! Cannot insert %d.\n", value);
@@ -14,6 +17,8 @@ void enqueue(int value) {
     queue[rear] = value;
     printf("Enqueued: %d\n", value);
 }
+
+// Function to delete an element (dequeue)
 void dequeue() {
     if (front == -1 || front > rear) {
         printf("Queue Underflow! Nothing to delete.\n");
@@ -22,8 +27,11 @@ void dequeue() {
     printf("Dequeued: %d\n", queue[front]);
     front++;
     if (front > rear) {
-        front = rear = -1;
+        front = rear = -1; // Reset queue when empty
     }
+}
+
+// Function to view front element (peek)
 void peek() {
     if (front == -1 || front > rear) {
         printf("Queue is empty. Nothing to peek.\n");
@@ -31,6 +39,8 @@ void peek() {
     }
     printf("Front element is: %d\n", queue[front]);
 }
+
+// Function to display queue
 void display() {
     if (front == -1 || front > rear) {
         printf("Queue is empty.\n");
@@ -42,6 +52,7 @@ void display() {
     }
     printf("\n");
 }
+
 int main() {
     int choice, value;
     while (1) {
@@ -53,6 +64,7 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+
         switch (choice) {
             case 1:
                 printf("Enter value to enqueue: ");
@@ -77,4 +89,3 @@ int main() {
     }
     return 0;
 }
-
